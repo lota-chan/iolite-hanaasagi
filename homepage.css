@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body{
+ font-size:18px;
+ margin:0;
+}
+
+.header{
+ background:#1E88A8;
+ color:white;
+ text-align:center;
+ padding:100px 5px;
+}
+
+.header a{
+ color:white;
+ padding:5px 10px;
+ margin:0 3px;
+ border:solid 1px white;
+ border-radius:10px;
+ transition:all.5s;
+}
+
+.header a.hover{
+ background:white;
+ color:#1E88A8
+}
