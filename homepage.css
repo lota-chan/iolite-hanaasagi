@@ -1,27 +1,161 @@
 ﻿@charset "UTF-8";
 
-body{
- font-size:18px;
- margin:0;
+/* 全体設定 */
+html {
+  scroll-behavior: smooth;
 }
 
-.header{
- background:#1E88A8;
- color:white;
- text-align:center;
- padding:100px 5px;
+body {
+  font-size: 18px;
+  font-family: "Garamond", "游明朝";
+  margin: 0;
 }
 
-.header a{
- color:white;
- padding:5px 10px;
- margin:0 3px;
- border:solid 1px white;
- border-radius:10px;
- transition:all.5s;
+/* ヘッダー */
+.header {
+  background: #A2D7DD;
+  font-size: 28px;
+  color: brown;
+  text-align: center;
+  padding: 30px 5px;
 }
 
-.header a.hover{
- background:white;
- color:#1E88A8
+.header h1 {
+  font-size: 18px;
+}
+
+/* メイン */
+.main {
+  background: #f7f6f5;
+  padding: 10px 0 40px 0;
+}
+
+.main h2 {
+  color: #44444f;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px; /* 下余白を統一 */
+}
+
+.main img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 目次 */
+.mokuji {
+  background: #a2d7dd;
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.mokuji ul {
+  margin: 10px 0;
+  padding-left:0;
+  color: brown;
+  font-family: "Garamond";
+  font-size: 26px;
+  text-align: center;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.mokuji a {
+  transition: all 0.5s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mokuji a:hover {
+  color: white;
+}
+
+/* バイオグラフィー表 */
+.bio {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0 40px 0;
+  table-layout: fixed;
+  font-size: 0.95em;
+  text-align: left;
+}
+
+.bio th,
+.bio td {
+  border: 1px solid #44444f;
+  padding: 4px 8px;
+  vertical-align: top;
+}
+
+.bio th {
+  background: #f2f2f2;
+  width: 80px;            /* 左列を固定幅に */
+  white-space: normal;     /* 折り返す */
+}
+
+.bio td {
+  word-wrap: break-word;   /* 長い文章も折り返す */
+}
+
+/* 注意事項 */
+.caution ol {
+  width: 70%;
+  margin: auto;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* コンテンツ */
+.contents {
+  font-size: 18px;
+  width: 80%;
+  margin: 0 auto 40px auto; /* 下余白を統一 */
+  padding: 0 20px;
+  text-align: center;
+}
+
+.contents p {
+  margin: 0 0 20px 0; /* 段落下余白統一 */
+  padding-left: 5px;
+  color: inherit;
+}
+
+.contents ul {
+  margin: 10px 0;
+  list-style: none;
+}
+
+.contents h3 {
+  color: #44444f;
+  font-size: 22px;
+  margin-top:100px;
+}
+
+/* 丸の装飾 */
+.circle {
+  display: flex;
+  justify-content: space-around; /* 両端に余白を作って均等配置 */
+  /*flex-wrap: wrap;               /* 画面幅が狭い場合は折り返す */
+  gap: 10px;                     /* 丸同士の間隔 */
+}
+
+.circle div {
+  width: 12px;
+  aspect-ratio: 4; 
+  background: #a2d7dd;
+  border-radius: 20%;
+}
+
+/* フッター */
+.footer {
+  font-size: 12px;
+  color: #44444f;
+  text-align: center;
+  margin-top: 40px;
 }
