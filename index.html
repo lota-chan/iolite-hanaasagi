@@ -143,58 +143,75 @@
         PDFの試し読みはこちら↓
       </p>
 
-      <canvas id="pdf-canvas"></canvas>
-      <input type="range" id="page-slider" min="1" value="1">
-      <button onclick="prevPage()">前のページ</button>
-      <button onclick="nextPage()">次のページ</button>
+<!-- PDF表示用キャンバスと操作UI -->
+<div class="pdf-viewer">
+  <canvas id="pdf-canvas"></canvas>
+  <div style="margin-top: 8px;">
+    <!-- スライダー：右端が1ページ目、左端が最終ページ -->
+    <input type="range" id="page-slider" min="1" value="1">
+    <!-- ページボタン -->
+    <button id="prev-btn">前のページ</button>
+    <button id="next-btn">次のページ</button>
+  </div>
+</div>
 
-      <script src="./js/pdf.js"></script> <!-- 相対パス -->
-      <script>
-        const url = 'IOLITEonlineedition.pdf';
-        let pdfDoc = null;
-        let pageNum = 1;
+<!-- PDF.js 読み込み -->
+<script src="./js/pdf.js"></script> <!-- 相対パスで置く -->
 
-        const canvas = document.getElementById('pdf-canvas');
-        const ctx = canvas.getContext('2d');
-        const slider = document.getElementById('page-slider');
+<script>
+  const pdfUrl = 'IOLITEonlineedition.pdf'; // PDFファイルの相対パス
+  let pdfDoc = null;
+  let pageNum = 1;
 
-        pdfjsLib.getDocument(url).promise.then(doc => {
-          pdfDoc = doc;
-          slider.max = pdfDoc.numPages;
-          renderPage(pageNum);
-        });
+  const canvas = document.getElementById('pdf-canvas');
+  const ctx = canvas.getContext('2d');
+  const slider = document.getElementById('page-slider');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
 
-        function renderPage(num) {
-          pdfDoc.getPage(num).then(page => {
-            const viewport = page.getViewport({ scale: 1.5 });
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
-            page.render({ canvasContext: ctx, viewport: viewport });
-          });
-        }
+  // PDF読み込み
+  pdfjsLib.getDocument(pdfUrl).promise.then(doc => {
+    pdfDoc = doc;
+    slider.max = pdfDoc.numPages;
+    slider.value = pdfDoc.numPages; // 初期値右端
+    pageNum = 1; // 最初は1ページ目
+    renderPage(pageNum);
+  });
 
-        // スライダー右→左でページ進むように反転
-        slider.addEventListener('input', e => {
-          pageNum = pdfDoc.numPages - parseInt(e.target.value) + 1;
-          renderPage(pageNum);
-        });
+  // ページ描画
+  function renderPage(num) {
+    pdfDoc.getPage(num).then(page => {
+      const viewport = page.getViewport({ scale: 1.5 });
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      page.render({ canvasContext: ctx, viewport: viewport });
+    });
+  }
 
-        function nextPage() {
-          if (pageNum > 1) {
-            pageNum--;
-            renderPage(pageNum);
-            slider.value = pdfDoc.numPages - pageNum + 1;
-          }
-        }
+  // スライダー操作（右→左で進む）
+  slider.addEventListener('input', e => {
+    pageNum = pdfDoc.numPages - parseInt(e.target.value) + 1;
+    renderPage(pageNum);
+  });
 
-        function prevPage() {
-          if (pageNum < pdfDoc.numPages) {
-            pageNum++;
-            renderPage(pageNum);
-            slider.value = pdfDoc.numPages - pageNum + 1;
-          }
-        }
-      </script>
+  // ボタン操作
+  prevBtn.addEventListener('click', () => {
+    if (pageNum > 1) {
+      pageNum--;
+      renderPage(pageNum);
+      slider.value = pdfDoc.numPages - pageNum + 1;
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (pageNum < pdfDoc.numPages) {
+      pageNum++;
+      renderPage(pageNum);
+      slider.value = pdfDoc.numPages - pageNum + 1;
+    }
+  });
+</script>
+
     </div>
 
     <div class="circle">
@@ -230,3 +247,4 @@
   </div>
 </body>
 </html>
+
