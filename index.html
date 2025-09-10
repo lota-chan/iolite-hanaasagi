@@ -148,7 +148,7 @@
       <button onclick="prevPage()">前のページ</button>
       <button onclick="nextPage()">次のページ</button>
 
-      <script src="./js/pdf.js"></script>
+      <script src="./js/pdf.js"></script> <!-- 相対パス -->
       <script>
         const url = 'IOLITEonlineedition.pdf';
         let pdfDoc = null;
@@ -173,24 +173,25 @@
           });
         }
 
+        // スライダー右→左でページ進むように反転
         slider.addEventListener('input', e => {
-          pageNum = parseInt(e.target.value);
+          pageNum = pdfDoc.numPages - parseInt(e.target.value) + 1;
           renderPage(pageNum);
         });
 
         function nextPage() {
-          if(pageNum < pdfDoc.numPages){
-            pageNum++;
+          if (pageNum > 1) {
+            pageNum--;
             renderPage(pageNum);
-            slider.value = pageNum;
+            slider.value = pdfDoc.numPages - pageNum + 1;
           }
         }
 
         function prevPage() {
-          if(pageNum > 1){
-            pageNum--;
+          if (pageNum < pdfDoc.numPages) {
+            pageNum++;
             renderPage(pageNum);
-            slider.value = pageNum;
+            slider.value = pdfDoc.numPages - pageNum + 1;
           }
         }
       </script>
