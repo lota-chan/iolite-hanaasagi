@@ -14,7 +14,9 @@ body {
 /* ヘッダー */
 .header {
   /*background: #A2D7DD;*/
-  background-image:"np6.png";
+  position: relative;
+	height: 50vh;
+  background:url(../img/np6.png) center/cover;
   font-size: 28px;
   color: brown;
   text-align: center;
@@ -169,6 +171,7 @@ button {
   text-align: center;
   margin-top: 40px;
 }
+
 
 
 
