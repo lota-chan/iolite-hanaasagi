@@ -13,7 +13,8 @@ body {
 
 /* ヘッダー */
 .header {
-  background: #A2D7DD;
+  /*background: #A2D7DD;*/
+  background-image:"np6";
   font-size: 28px;
   color: brown;
   text-align: center;
@@ -168,4 +169,5 @@ button {
   text-align: center;
   margin-top: 40px;
 }
+
 
