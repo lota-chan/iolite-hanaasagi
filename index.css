@@ -15,10 +15,11 @@ body {
 .header {
   /*background: #A2D7DD;*/
   position: relative;
-  height: 50vh;
+  height: 100vh;
   background-image: url(../image/np6.png);
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
   font-size: 28px;
   color: brown;
   text-align: center;
@@ -173,6 +174,7 @@ button {
   text-align: center;
   margin-top: 40px;
 }
+
 
 
 
