@@ -14,7 +14,8 @@ body {
 /* ヘッダー */
 .header {
   /*background: #A2D7DD;*/
-  position: relative;
+  position: absolute;
+  box-sizing: border-box;
   height: 100vh;
   background-image: url(../image/np6.png);
   background-size: cover;
@@ -174,6 +175,7 @@ button {
   text-align: center;
   margin-top: 40px;
 }
+
 
 
 
