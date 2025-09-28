@@ -14,7 +14,7 @@ body {
 /* ヘッダー */
 .header {
   /*background: #A2D7DD;*/
-  background-image:"np6";
+  background-image:"np6.png";
   font-size: 28px;
   color: brown;
   text-align: center;
@@ -169,5 +169,6 @@ button {
   text-align: center;
   margin-top: 40px;
 }
+
 
 
