@@ -23,6 +23,31 @@
       text-align: left;
       width: 8em;
     }
+    .slideshow {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+    }
+    .slideshow img {
+      width: 100%;
+      display: none;
+    }
+    .slideshow img.active {
+      display: block;
+    }
+    .slideshow button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .slideshow .prev { left: 10px; }
+    .slideshow .next { right: 10px; }
   </style>
 </head>
 <body>
@@ -140,79 +165,18 @@
       <p>
         電子版リンク → 
         <a href="https://drive.google.com/drive/folders/19_mPbnDO2G55v9og6uNOtCwqaRQUDbaw?usp=drive_link" target="glink">Google Drive</a>
-        <br><br>
-        PDFの試し読みはこちら↓
       </p>
 
-<!-- PDF表示用キャンバスと操作UI -->
-<div class="pdf-viewer">
-  <canvas id="pdf-canvas"></canvas>
-  <div style="margin-top: 8px;">
-    <!-- スライダー：右端が1ページ目、左端が最終ページ -->
-    <input type="range" id="page-slider" min="1" value="1">
-    <!-- ページボタン -->
-    <button id="prev-btn">前のページ</button>
-    <button id="next-btn">次のページ</button>
-  </div>
-</div>
+      <!-- シンプルなスライドショー -->
+      <div class="slideshow">
+        <img src="artwork/1.jpg" alt="artwork1" class="active">
+        <img src="artwork/2.jpg" alt="artwork2">
+        <img src="artwork/3.jpg" alt="artwork3">
+        <!-- 必要な分だけ追加 -->
 
-<!-- PDF.js 読み込み -->
-<script src="./js/pdf.js"></script> <!-- 相対パスで置く -->
-
-<script>
-  const pdfUrl = 'IOLITEonlineedition.pdf'; // PDFファイルの相対パス
-  let pdfDoc = null;
-  let pageNum = 1;
-
-  const canvas = document.getElementById('pdf-canvas');
-  const ctx = canvas.getContext('2d');
-  const slider = document.getElementById('page-slider');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-
-  // PDF読み込み
-  pdfjsLib.getDocument(pdfUrl).promise.then(doc => {
-    pdfDoc = doc;
-    slider.max = pdfDoc.numPages;
-    slider.value = pdfDoc.numPages; // 初期値右端
-    pageNum = 1; // 最初は1ページ目
-    renderPage(pageNum);
-  });
-
-  // ページ描画
-  function renderPage(num) {
-    pdfDoc.getPage(num).then(page => {
-      const viewport = page.getViewport({ scale: 1.5 });
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
-      page.render({ canvasContext: ctx, viewport: viewport });
-    });
-  }
-
-  // スライダー操作（右→左で進む）
-  slider.addEventListener('input', e => {
-    pageNum = pdfDoc.numPages - parseInt(e.target.value) + 1;
-    renderPage(pageNum);
-  });
-
-  // ボタン操作
-  prevBtn.addEventListener('click', () => {
-    if (pageNum > 1) {
-      pageNum--;
-      renderPage(pageNum);
-      slider.value = pdfDoc.numPages - pageNum + 1;
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (pageNum < pdfDoc.numPages) {
-      pageNum++;
-      renderPage(pageNum);
-      slider.value = pdfDoc.numPages - pageNum + 1;
-    }
-  });
-</script>
-
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
     <div class="circle">
@@ -256,15 +220,21 @@
       &copy;2026 by 花浅葱の朝に
     </div>
   </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slideshow img');
+    const prevBtn = document.querySelector('.slideshow .prev');
+    const nextBtn = document.querySelector('.slideshow .next');
+    let current = 0;
+
+    function showSlide(n) {
+      slides[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    prevBtn.addEventListener('click', () => showSlide(current - 1));
+    nextBtn.addEventListener('click', () => showSlide(current + 1));
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
