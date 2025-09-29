@@ -23,31 +23,16 @@
       text-align: left;
       width: 8em;
     }
-    .slideshow {
-      position: relative;
-      max-width: 800px;
-      margin: auto;
+    .artwork-viewer {
+      text-align: center;
     }
-    .slideshow img {
-      width: 100%;
-      display: none;
+    .artwork-viewer img {
+      max-width: 100%;
+      height: auto;
     }
-    .slideshow img.active {
-      display: block;
+    .artwork-viewer button {
+      margin: 8px;
     }
-    .slideshow button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.4);
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-    .slideshow .prev { left: 10px; }
-    .slideshow .next { right: 10px; }
   </style>
 </head>
 <body>
@@ -165,18 +150,45 @@
       <p>
         電子版リンク → 
         <a href="https://drive.google.com/drive/folders/19_mPbnDO2G55v9og6uNOtCwqaRQUDbaw?usp=drive_link" target="glink">Google Drive</a>
+        <br><br>
+        PDFの試し読みはこちら↓
       </p>
 
-      <!-- シンプルなスライドショー -->
-      <div class="slideshow">
-        <img src="artwork/1.jpg" alt="artwork1" class="active">
-        <img src="artwork/2.jpg" alt="artwork2">
-        <img src="artwork/3.jpg" alt="artwork3">
-        <!-- 必要な分だけ追加 -->
-
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
+      <!-- 画像スライド表示 -->
+      <div class="artwork-viewer">
+        <button id="prev-img">← 前へ</button>
+        <img id="artwork-img" src="artwork/1.jpg" alt="artwork">
+        <button id="next-img">次へ →</button>
       </div>
+
+      <script>
+        const images = [
+          "artwork/1.jpg",
+          "artwork/2.jpg",
+          "artwork/3.jpg",
+          "artwork/4.jpg",
+          "artwork/5.jpg"
+        ];
+        let currentIndex = 0;
+
+        const imgEl = document.getElementById("artwork-img");
+        const prevBtn = document.getElementById("prev-img");
+        const nextBtn = document.getElementById("next-img");
+
+        function showImage(index) {
+          imgEl.src = images[index];
+        }
+
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showImage(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % images.length;
+          showImage(currentIndex);
+        });
+      </script>
     </div>
 
     <div class="circle">
@@ -220,21 +232,5 @@
       &copy;2026 by 花浅葱の朝に
     </div>
   </div>
-
-  <script>
-    const slides = document.querySelectorAll('.slideshow img');
-    const prevBtn = document.querySelector('.slideshow .prev');
-    const nextBtn = document.querySelector('.slideshow .next');
-    let current = 0;
-
-    function showSlide(n) {
-      slides[current].classList.remove('active');
-      current = (n + slides.length) % slides.length;
-      slides[current].classList.add('active');
-    }
-
-    prevBtn.addEventListener('click', () => showSlide(current - 1));
-    nextBtn.addEventListener('click', () => showSlide(current + 1));
-  </script>
 </body>
 </html>
