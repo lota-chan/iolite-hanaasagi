@@ -79,7 +79,7 @@ body {
 .mokuji {
   background: #a2d7dd;
   width: 90%;
-  max-width: 1000px;
+  max-width: 700px;
   margin: 40px auto;
   padding: 20px 10px;
   border-radius: 15px;
@@ -296,4 +296,5 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
