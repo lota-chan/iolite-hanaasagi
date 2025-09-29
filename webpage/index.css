@@ -17,7 +17,7 @@ body {
 }
 
 .header {
-  position: relative;
+  /*position: relative;
   box-sizing: border-box;
   height: 100vh;
   
@@ -26,7 +26,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  /*background: #a2d7dd;
+  */background: #a2d7dd;
 
   /* コンテンツを中央に配置 */
   display: flex;
@@ -296,6 +296,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
