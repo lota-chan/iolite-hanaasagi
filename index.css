@@ -17,32 +17,19 @@ body {
 }
 
 .header {
-  /*position: relative;
-  box-sizing: border-box;
-  height: 100vh;
-  
-  background-image: url(../image/np6.png);
+  background: url("image/bc.png") no-repeat center center;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  */background: #a2d7dd;
-
-  /* コンテンツを中央に配置 */
+  text-align: right;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  
-  font-size: 20px;
-  color: #795548;
-  padding: 30px 5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #f0f0f0; /* 背景に合わせて白字に */
 }
-
+ 
 .header h1 {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
 }
@@ -77,49 +64,30 @@ body {
 /* 4. 目次 (おしゃれなボタン) */
 /* ==================================== */
 .mokuji {
-  background: #a2d7dd;
-  width: 90%;
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px 10px;
-  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 20px 0;
 }
 
 .mokuji ul {
-  margin: 10px 0;
-  padding-left: 0;
   list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 20px; /* リンクの間隔 */
 }
 
 .mokuji li {
-  margin: 5px; 
+  margin: 0;
 }
 
 .mokuji a {
-  /* ボタンとして装飾 */
-  display: block;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 20px;
   text-decoration: none;
-  color: white;
-  background: #795548;
-  border: 2px solid #795548;
-  transition: background-color 0.3s, color 0.3s, transform 0.2s;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  color: #333;
 }
 
 .mokuji a:hover {
-  background-color: white;
-  color: #795548;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  text-decoration: underline;
 }
 
 
@@ -306,6 +274,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
