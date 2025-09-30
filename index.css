@@ -19,14 +19,14 @@ body {
 .header {
   background: url("image/bc.png") no-repeat center center;
   background-size: cover;
-  text-align: right;
   height: 300px;
-  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;  /* 縦方向 → 下 */
+  align-items: center;      /* 横方向 → 右 */
+  padding: 20px;              /* 端にピッタリくっつかないように余白 */
   color: #44444f; 
+  text-align: center;
 }
  
 .header h1 {
@@ -288,6 +288,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
