@@ -25,7 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #44444f; /* 背景に合わせて白字に */
+  color: #44444f; 
 }
  
 .header h1 {
@@ -171,15 +171,16 @@ details[open] summary {
   max-width: 900px;
   margin: 0 auto 40px auto;
   padding: 0 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .contents p {
   margin: 0 0 20px 0;
-  padding-left: 0;
+  /*padding-left: 0;*/
 }
 
 .contents ul {
+  list-style: none;
   margin: 10px 0 20px 20px;
   list-style: disc;
 }
@@ -284,6 +285,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
