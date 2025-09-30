@@ -21,7 +21,7 @@ body {
   background-size: cover;
   text-align: right;
   height: 300px;
-  padding: 20px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,14 +31,14 @@ body {
  
 .header h1 {
   font-size: 18px !important;
-  padding-right: 0;
-  text-align: right;
+  /*padding-right: 0;
+  text-align: right;*/
 }
 
 .header b {
   font-size: 14px;
-  padding-right: 0;
-  text-align: right;
+  /*padding-right: 0;
+  text-align: right;*/
 }
 
 /* ==================================== */
@@ -179,10 +179,13 @@ details[open] summary {
 }
 
 .contents ul {
-  list-style: none;
   /*margin: 10px 0 20px 20px;*/
   text-align: center;
   list-style: disc;
+}
+
+.contents ul li{
+  list-style: none;
 }
 
 .contents h3 {
@@ -285,6 +288,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
