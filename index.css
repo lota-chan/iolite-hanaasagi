@@ -146,7 +146,7 @@ details[open] summary {
 /* ==================================== */
 .caution {
     padding: 20px 0;
-    background: #f0f0f0;
+    background: #f7f6f5;
 }
 
 .caution ol {
@@ -283,6 +283,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
