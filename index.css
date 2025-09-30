@@ -137,7 +137,6 @@ details[open] summary {
 }
 
 .bio {
-  display: none;
   border-collapse: collapse;
   width: 100%;
   max-width: 800px;
@@ -307,6 +306,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
