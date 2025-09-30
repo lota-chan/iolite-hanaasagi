@@ -42,7 +42,7 @@ body {
 }
 
 .header h1 {
-  font-size: 24px;
+  font-size: 28px;
   margin: 0;
   padding: 0;
 }
@@ -127,6 +127,7 @@ body {
 /* 5. バイオグラフィー表 */
 /* ==================================== */
 .bio {
+  display: none;
   border-collapse: collapse;
   width: 100%;
   max-width: 800px;
@@ -296,6 +297,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
