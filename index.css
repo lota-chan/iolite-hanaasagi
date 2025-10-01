@@ -86,7 +86,7 @@ body {
 
 .mokuji li {
   margin: 0;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .mokuji a {
@@ -196,6 +196,16 @@ details[open] summary {
   padding-left: 10px;
 }
 
+.contents a {
+  transition: all 0.5s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contents a:hover {
+  color: white;
+}
+
 /* スライダー関連 */
 #page-slider {
   width: 90%;
@@ -288,6 +298,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
