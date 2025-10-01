@@ -82,6 +82,7 @@ body {
   justify-content: center;
   display: flex;
   gap: 40px; /* リンクの間隔 */
+  flex-wrap: wrap;
 }
 
 .mokuji li {
@@ -288,6 +289,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
