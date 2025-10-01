@@ -197,13 +197,16 @@ details[open] summary {
 }
 
 .contents a {
+  color: white;
   transition: all 0.5s;
   text-decoration: none;
   color: inherit;
+  background: #a2d7dd;
+  border-radius: 10px;
 }
 
 .contents a:hover {
-  color: white;
+  color: #a2d7dd;
 }
 
 /* スライダー関連 */
@@ -271,16 +274,7 @@ button:hover {
   .header h1 {
     font-size: 2em;
   }
-
-  .mokuji ul {
-    gap: 10px;
-  }
-
-  .mokuji a {
-    padding: 8px 15px;
-    font-size: 18px;
-  }
-
+ 
   .bio th,
   .bio td {
     display: block;
@@ -298,6 +292,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
