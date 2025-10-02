@@ -72,17 +72,17 @@ body {
 /* ==================================== */
 .mokuji {
   text-align: center;
-  margin: 20px 0;
+  margin: 20px auto;
+  padding: 10px;
 }
 
 .mokuji ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 0;
+  margin: 10px 0;
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
-  gap: auto;
 }
 
 .mokuji li {
@@ -294,6 +294,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
