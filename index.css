@@ -86,7 +86,7 @@ body {
 
 .mokuji li {
   margin: 0;
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .mokuji a {
@@ -190,7 +190,7 @@ details[open] summary {
 
 .contents h3 {
   color: #795548;
-  font-size: 24px;
+  font-size: 22px;
   margin-top: 80px;
   border-left: 5px solid #a2d7dd;
   padding-left: 10px;
@@ -203,6 +203,7 @@ details[open] summary {
   color: inherit;
   background: #a2d7dd;
   border-radius: 10px;
+  padding: 5px;
 }
 
 .contents a:hover {
@@ -292,6 +293,7 @@ button:hover {
     padding: 0 5px;
   }
 }
+
 
 
 
