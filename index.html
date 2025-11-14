@@ -158,44 +158,6 @@
         <button id="prev-img">← 次のページ</button><button id="next-img">前のページ →</button>
       </div>
 
-      <script>
-        const images = [
-          "artworks/pbc.jpg",
-          "artworks/p24.jpg",
-          "artworks/p22p23.jpg",
-          "artworks/p20p21.jpg",
-          "artworks/p18p19.jpg",
-          "artworks/p16p17.jpg",
-          "artworks/p14p15.jpg",
-          "artworks/p12p13.jpg",
-          "artworks/p10p11.jpg",
-          "artworks/p8p9.jpg",
-          "artworks/p6p7.jpg",
-          "artworks/p4p5.jpg",
-          "artworks/p2p3.jpg",
-          "artworks/p1.jpg",
-          "artworks/hyoshi2.png"
-        ];
-        let currentIndex = 0;
-
-        const imgEl = document.getElementById("artworks-img");
-        const prevBtn = document.getElementById("prev-img");
-        const nextBtn = document.getElementById("next-img");
-
-        function showImage(index) {
-          imgEl.src = images[index];
-        }
-
-        prevBtn.addEventListener("click", () => {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          showImage(currentIndex);
-        });
-
-        nextBtn.addEventListener("click", () => {
-          currentIndex = (currentIndex + 1) % images.length;
-          showImage(currentIndex);
-        });
-      </script>
       <summary><h3>Expanations</h3></summary>
       <table class="bio">
           <tr>
@@ -257,7 +219,45 @@
           <tr>
             <th>photo04</th>
             <td>これを見ると、■中樹のan×nを思い出します。</td>
-          </tr>
+          </tr>      
+      <script>
+        const images = [
+          "artworks/pbc.jpg",
+          "artworks/p24.jpg",
+          "artworks/p22p23.jpg",
+          "artworks/p20p21.jpg",
+          "artworks/p18p19.jpg",
+          "artworks/p16p17.jpg",
+          "artworks/p14p15.jpg",
+          "artworks/p12p13.jpg",
+          "artworks/p10p11.jpg",
+          "artworks/p8p9.jpg",
+          "artworks/p6p7.jpg",
+          "artworks/p4p5.jpg",
+          "artworks/p2p3.jpg",
+          "artworks/p1.jpg",
+          "artworks/hyoshi2.png"
+        ];
+        let currentIndex = 0;
+
+        const imgEl = document.getElementById("artworks-img");
+        const prevBtn = document.getElementById("prev-img");
+        const nextBtn = document.getElementById("next-img");
+
+        function showImage(index) {
+          imgEl.src = images[index];
+        }
+
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showImage(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % images.length;
+          showImage(currentIndex);
+        });
+      </script>      
     </div>
  
     <h2 id="contact">Contact</h2>
@@ -293,6 +293,7 @@
   </div>
 </body>
 </html>
+
 
 
 
