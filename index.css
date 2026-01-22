@@ -191,18 +191,54 @@ details[open] summary {
   padding-left: 10px;
 }
 
+/* ▼ リンクをボタン見た目にする */
 .contents a {
-  transition: all 0.5s;
+  display: inline-block;
+
+  margin: 6px;
+  padding: 12px 22px;
+
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #44444f;
   text-decoration: none;
-  color: inherit;
-  background: #a2d7dd;
-  border-radius: 10px;
-  padding: 5px;
+
+  background-color: #a2d7dd;
+  border: 2px solid #79bcc3;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0 #79bcc3,
+    0 6px 10px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background-color 0.2s ease;
 }
 
 .contents a:hover {
-  color: #a2d7dd;
+  background-color: #8ccad1;
 }
+
+.contents a:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 #79bcc3,
+    0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contents a:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(162, 215, 221, 0.7),
+    0 4px 0 #79bcc3,
+    0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 /* ==================================== */
 /* スライダー関連 */
@@ -323,4 +359,5 @@ button:focus {
     padding: 0 5px;
   }
 }
+
 
